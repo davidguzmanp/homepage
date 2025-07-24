@@ -6,8 +6,8 @@ const publications = [
         authors: "David Guzman Piedrahita, Yang Yang, Mrinmaya Sachan, Giulia Ramponi, Bernhard Schölkopf, Zhijing Jin",
         abstract: "Multi-agent simulation study revealing how reasoning can lead to free-riding behavior in LLMs in public goods game scenarios. Through systematic multi-agent simulations, we demonstrate that models with enhanced reasoning abilities may paradoxically become more prone to free-riding behavior.",
         links: [
-            { text: "arXiv", url: "https://arxiv.org/abs/2402.05853" },
-            { text: "PDF", url: "https://arxiv.org/pdf/2402.05853" }
+            { text: "arXiv", url: "https://arxiv.org/abs/2506.23276" },
+            { text: "PDF", url: "https://arxiv.org/pdf/2506.23276" }
         ]
     },
     {
@@ -16,8 +16,8 @@ const publications = [
         authors: "David Guzman Piedrahita, Amir Fazla, Lukas Krauter",
         abstract: "Novel adversarial attack algorithm achieving 2.8x-3.3x improvement over traditional methods for NLP model robustness testing. BeamAttack utilizes beam search techniques to balance attack effectiveness with computational efficiency.",
         links: [
-            { text: "Paper", url: "https://ceur-ws.org/Vol-3740/paper-42.pdf" },
-            { text: "Semantic Scholar", url: "https://www.semanticscholar.org/paper/TextTrojaners-at-CheckThat!-2024%3A-Robustness-of-Piedrahita-Fazla/80ef9dc666d621ffd29b18e17b81c0bba35f3656" }
+            { text: "arXiv", url: "https://arxiv.org/abs/2506.23661" },
+            { text: "PDF", url: "https://arxiv.org/pdf/2506.23661" }
         ]
     },
     {
@@ -26,8 +26,8 @@ const publications = [
         authors: "David Guzman Piedrahita, Ira Strauss, Bernhard Schölkopf, Rada Mihalcea, Zhijing Jin",
         abstract: "Novel methodology for assessing LLM alignment with democracy-authoritarianism spectrum, revealing language-dependent political biases. Our findings show that LLMs generally favor democratic values but exhibit increased favorability toward authoritarian figures when prompted in Mandarin.",
         links: [
-            { text: "arXiv", url: "https://arxiv.org/abs/2406.08631" },
-            { text: "PDF", url: "https://arxiv.org/pdf/2406.08631" }
+            { text: "arXiv", url: "https://arxiv.org/abs/2506.12758" },
+            { text: "PDF", url: "https://arxiv.org/pdf/2506.12758" }
         ]
     },
     {
@@ -36,8 +36,8 @@ const publications = [
         authors: "Karson Samway, Max Kleiman-Weiner, David Guzman Piedrahita, Rada Mihalcea, Bernhard Schölkopf, Zhijing Jin",
         abstract: "Taxonomy of moral rationales for systematically classifying LLM reasoning traces, revealing differences between chain-of-thought and post-hoc moral reasoning. We show that LLM chains-of-thought tend to favor deontological principles, while post-hoc explanations shift toward consequentialist rationales.",
         links: [
-            { text: "arXiv", url: "https://arxiv.org/abs/2405.17320" },
-            { text: "PDF", url: "https://arxiv.org/pdf/2405.17320" }
+            { text: "arXiv", url: "https://arxiv.org/abs/2505.21479" },
+            { text: "PDF", url: "https://arxiv.org/pdf/2505.21479" }
         ]
     },
     {
@@ -46,8 +46,8 @@ const publications = [
         authors: "Simon Backmann, David Guzman Piedrahita, Eyob Tewolde, Rada Mihalcea, Bernhard Schölkopf, Zhijing Jin",
         abstract: "Introduced MoralSim to evaluate LLM behavior in morally charged prisoner's dilemma and public goods games. We showed substantial variation across models in both their general tendency to act morally and the consistency of their behavior across game types.",
         links: [
-            { text: "arXiv", url: "https://arxiv.org/abs/2405.15667" },
-            { text: "PDF", url: "https://arxiv.org/pdf/2405.15667" }
+            { text: "arXiv", url: "https://arxiv.org/abs/2505.19212" },
+            { text: "PDF", url: "https://arxiv.org/pdf/2505.19212" }
         ]
     },
     {
@@ -56,8 +56,8 @@ const publications = [
         authors: "Amir Fazla, Lukas Krauter, David Guzman Piedrahita, Andreas Michail",
         abstract: "Advanced adversarial attack methodology using beam search for enhanced text generation. BeamAttack represents a significant advancement in adversarial text generation, moving beyond traditional greedy search approaches to leverage beam search for more effective attacks.",
         links: [
-            { text: "arXiv", url: "https://arxiv.org/abs/2404.08996" },
-            { text: "PDF", url: "https://arxiv.org/pdf/2404.08996" }
+            { text: "arXiv", url: "https://arxiv.org/abs/2506.23661" },
+            { text: "PDF", url: "https://arxiv.org/pdf/2506.23661" }
         ]
     },
     {
