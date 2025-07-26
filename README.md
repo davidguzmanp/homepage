@@ -10,7 +10,7 @@ A beautiful, modern academic portfolio website showcasing AI safety research and
 - **Auto Publications**: Automatic publication loading from JavaScript data
 - **Fast Loading**: Optimized for speed and performance
 
-## 📁 File Structure
+## 📁 File Structure!
 
 ```
 website/
