@@ -363,6 +363,13 @@ body::before {
     border-color: rgba(59, 130, 246, 0.3);
 }
 
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .profile-info h3 {
     margin-bottom: 1.5rem;
     font-size: 1rem;
