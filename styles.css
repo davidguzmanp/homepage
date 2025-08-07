@@ -341,8 +341,8 @@ body::before {
 }
 
 .profile-avatar {
-    width: 80px;
-    height: 80px;
+    width: 200px;
+    height: 200px;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     border: 2px solid rgba(59, 130, 246, 0.1);
     border-radius: 50%;
