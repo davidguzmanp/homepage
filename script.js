@@ -2,7 +2,7 @@
 const publications = [
     {
         title: "Corrupted by Reasoning: Reasoning Language Models Become Free-Riders in Public Goods Games",
-        venue: "COLM 2024",
+        venue: "COLM 2025",
         authors: "D. Guzman Piedrahita, Y. Yang, M. Sachan, G. Ramponi, B. Schölkopf, Z. Jin",
         abstract: "Multi-agent simulation study revealing how reasoning can lead to free-riding behavior in LLMs in public goods game scenarios. Through systematic multi-agent simulations, we demonstrate that models with enhanced reasoning abilities may paradoxically become more prone to free-riding behavior.",
         links: [
