@@ -105,6 +105,32 @@ body::before {
     padding-top: 80px;
 }
 
+/* Aurora background */
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: -10%;
+    background: radial-gradient(600px 300px at 20% 30%, rgba(99,102,241,0.15), transparent 60%),
+                radial-gradient(500px 300px at 80% 70%, rgba(59,130,246,0.12), transparent 60%),
+                radial-gradient(400px 250px at 50% 10%, rgba(16,185,129,0.10), transparent 60%);
+    filter: blur(40px);
+    z-index: 0;
+    animation: auroraShift 18s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.hero::after {
+    animation-direction: alternate-reverse;
+    opacity: 0.7;
+}
+
+@keyframes auroraShift {
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    50%  { transform: translate3d(2%, -2%, 0) scale(1.05); }
+    100% { transform: translate3d(-2%, 2%, 0) scale(1.02); }
+}
+
 /* Floating elements */
 .floating-element {
     position: absolute;
@@ -166,10 +192,18 @@ body::before {
 
 .hero-title strong {
     font-weight: 600;
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #3b82f6 100%);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradientMove 6s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
 }
 
 
@@ -644,6 +678,43 @@ section {
     color: white;
     text-align: center;
     padding: 2rem 0;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34px;
+    height: 54px;
+    border: 2px solid rgba(26, 26, 26, 0.2);
+    border-radius: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    z-index: 2;
+}
+
+.scroll-indicator:hover {
+    transform: translateX(-50%) translateY(-2px);
+    border-color: rgba(26, 26, 26, 0.35);
+}
+
+.scroll-dot {
+    width: 6px;
+    height: 6px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    margin-top: 8px;
+    animation: scrollBounce 1.6s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); opacity: 0.8; }
+    50% { transform: translateY(18px); opacity: 0.2; }
 }
 
 /* Responsive Design */
