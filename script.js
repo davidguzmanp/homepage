@@ -160,3 +160,245 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, 1000);
 });
+
+// 3D Coin with Three.js
+function init3DCoin() {
+    const container = document.getElementById('coin3d');
+    if (!container || typeof THREE === 'undefined') return;
+
+    // Scene setup
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / 400, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, 400);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    container.appendChild(renderer.domElement);
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(5, 10, 5);
+    directionalLight.castShadow = true;
+    scene.add(directionalLight);
+
+    const pointLight = new THREE.PointLight(0xffffff, 0.5);
+    pointLight.position.set(-5, 5, -5);
+    scene.add(pointLight);
+
+    // Create coin group
+    const coinGroup = new THREE.Group();
+
+    // Coin geometry
+    const coinRadius = 2;
+    const coinThickness = 0.2;
+    const coinGeometry = new THREE.CylinderGeometry(coinRadius, coinRadius, coinThickness, 64);
+
+    // Silver material
+    const silverMaterial = new THREE.MeshStandardMaterial({
+        color: 0xc0c0c0,
+        metalness: 0.9,
+        roughness: 0.2,
+        envMapIntensity: 1
+    });
+
+    // Create main coin body
+    const coin = new THREE.Mesh(coinGeometry, silverMaterial);
+    coin.rotation.z = Math.PI / 2;
+    coin.castShadow = true;
+    coin.receiveShadow = true;
+    coinGroup.add(coin);
+
+    // Create edge detail (rim)
+    const rimGeometry = new THREE.TorusGeometry(coinRadius, 0.05, 8, 64);
+    const rim = new THREE.Mesh(rimGeometry, silverMaterial);
+    rim.rotation.x = Math.PI / 2;
+    coinGroup.add(rim);
+
+    // Function to create text texture
+    function createTextTexture(text) {
+        const canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 512;
+        const context = canvas.getContext('2d');
+
+        // Clear canvas with silver gradient
+        context.fillStyle = '#c0c0c0';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Add subtle gradient for depth
+        const gradient = context.createRadialGradient(256, 256, 0, 256, 256, 256);
+        gradient.addColorStop(0, '#d0d0d0');
+        gradient.addColorStop(1, '#a0a0a0');
+        context.fillStyle = gradient;
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw decorative border
+        context.strokeStyle = '#808080';
+        context.lineWidth = 8;
+        context.beginPath();
+        context.arc(256, 256, 240, 0, Math.PI * 2);
+        context.stroke();
+
+        // Draw inner circle
+        context.lineWidth = 4;
+        context.beginPath();
+        context.arc(256, 256, 220, 0, Math.PI * 2);
+        context.stroke();
+
+        // Draw text
+        context.fillStyle = '#505050';
+        context.font = 'bold 72px Georgia';
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+        
+        // Add text shadow for embossed effect
+        context.shadowColor = 'rgba(0, 0, 0, 0.3)';
+        context.shadowBlur = 4;
+        context.shadowOffsetX = 2;
+        context.shadowOffsetY = 2;
+        
+        context.fillText(text, 256, 256);
+
+        // Add decorative stars
+        const starPositions = [
+            [256, 100], [256, 412],
+            [100, 256], [412, 256]
+        ];
+        
+        context.font = '36px Georgia';
+        context.shadowBlur = 2;
+        starPositions.forEach(pos => {
+            context.fillText('★', pos[0], pos[1]);
+        });
+
+        return new THREE.CanvasTexture(canvas);
+    }
+
+    // Create text for both sides
+    const frontTexture = createTextTexture('SAFE');
+    const backTexture = createTextTexture('PROGRESS');
+
+    // Materials for each face
+    const frontMaterial = new THREE.MeshStandardMaterial({
+        map: frontTexture,
+        metalness: 0.7,
+        roughness: 0.3,
+        bumpMap: frontTexture,
+        bumpScale: 0.05
+    });
+
+    const backMaterial = new THREE.MeshStandardMaterial({
+        map: backTexture,
+        metalness: 0.7,
+        roughness: 0.3,
+        bumpMap: backTexture,
+        bumpScale: 0.05
+    });
+
+    // Create faces
+    const faceGeometry = new THREE.CircleGeometry(coinRadius - 0.01, 64);
+    
+    const frontFace = new THREE.Mesh(faceGeometry, frontMaterial);
+    frontFace.position.x = coinThickness / 2 + 0.001;
+    frontFace.rotation.y = Math.PI / 2;
+    coinGroup.add(frontFace);
+
+    const backFace = new THREE.Mesh(faceGeometry, backMaterial);
+    backFace.position.x = -coinThickness / 2 - 0.001;
+    backFace.rotation.y = -Math.PI / 2;
+    coinGroup.add(backFace);
+
+    scene.add(coinGroup);
+
+    // Camera position
+    camera.position.z = 5;
+
+    // Mouse controls
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetRotationX = 0;
+    let targetRotationY = 0;
+    let mouseDown = false;
+
+    container.addEventListener('mousedown', (e) => {
+        mouseDown = true;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    document.addEventListener('mouseup', () => {
+        mouseDown = false;
+    });
+
+    container.addEventListener('mousemove', (e) => {
+        if (!mouseDown) return;
+        
+        const deltaX = e.clientX - mouseX;
+        const deltaY = e.clientY - mouseY;
+        
+        targetRotationY += deltaX * 0.01;
+        targetRotationX += deltaY * 0.01;
+        
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Touch controls for mobile
+    container.addEventListener('touchstart', (e) => {
+        mouseDown = true;
+        mouseX = e.touches[0].clientX;
+        mouseY = e.touches[0].clientY;
+    });
+
+    document.addEventListener('touchend', () => {
+        mouseDown = false;
+    });
+
+    container.addEventListener('touchmove', (e) => {
+        if (!mouseDown) return;
+        
+        const deltaX = e.touches[0].clientX - mouseX;
+        const deltaY = e.touches[0].clientY - mouseY;
+        
+        targetRotationY += deltaX * 0.01;
+        targetRotationX += deltaY * 0.01;
+        
+        mouseX = e.touches[0].clientX;
+        mouseY = e.touches[0].clientY;
+    });
+
+    // Window resize handler
+    window.addEventListener('resize', () => {
+        camera.aspect = container.clientWidth / 400;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, 400);
+    });
+
+    // Animation loop
+    function animate() {
+        requestAnimationFrame(animate);
+
+        // Smooth rotation
+        coinGroup.rotation.x += (targetRotationX - coinGroup.rotation.x) * 0.1;
+        coinGroup.rotation.y += (targetRotationY - coinGroup.rotation.y) * 0.1;
+
+        // Gentle auto-rotation when not interacting
+        if (!mouseDown) {
+            targetRotationY += 0.005;
+        }
+
+        renderer.render(scene, camera);
+    }
+
+    animate();
+}
+
+// Initialize 3D coin when Three.js is loaded
+if (typeof THREE !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', init3DCoin);
+} else {
+    window.addEventListener('load', init3DCoin);
+}
