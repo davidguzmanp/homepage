@@ -717,6 +717,45 @@ section {
     50% { transform: translateY(18px); opacity: 0.2; }
 }
 
+/* 3D Coin Section */
+.coin-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    position: relative;
+}
+
+.coin-3d-container {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    height: 400px;
+    cursor: grab;
+}
+
+.coin-3d-container:active {
+    cursor: grabbing;
+}
+
+.coin-info {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.1);
+    color: #666;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 10;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.coin-3d-container canvas {
+    display: block;
+    margin: 0 auto;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
