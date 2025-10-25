@@ -439,29 +439,16 @@ section {
     color: #333;
 }
 
-/* About Section */
-.about {
-    background: #f8fafc;
+/* Hero Interests Section */
+.hero-interests {
+    margin-bottom: 2.5rem;
 }
 
-.about-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-}
-
-.about-text {
-    font-size: 1.125rem;
-    line-height: 1.7;
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
-}
-
-.interests h3 {
+.hero-interests h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #64748b;
     margin-bottom: 1rem;
-    color: #0066cc;
 }
 
 .interest-tags {
@@ -471,12 +458,19 @@ section {
 }
 
 .tag {
-    background: #0066cc;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
     color: white;
     padding: 0.5rem 1rem;
-    border-radius: 25px;
+    border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 500;
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 /* Experience Section */
