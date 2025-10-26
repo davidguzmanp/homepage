@@ -32,7 +32,7 @@ const publications = [
     },
     {
         title: "Are Language Models Consequentialist or Deontological Moral Reasoners?",
-        venue: "arXiv",
+        venue: "EMNLP 2025",
         authors: "K. Samway, M. Kleiman-Weiner, D. Guzman Piedrahita, R. Mihalcea, B. Schölkopf, Z. Jin",
         abstract: "Taxonomy of moral rationales for systematically classifying LLM reasoning traces, revealing differences between chain-of-thought and post-hoc moral reasoning. We show that LLM chains-of-thought tend to favor deontological principles, while post-hoc explanations shift toward consequentialist rationales.",
         links: [
