@@ -215,61 +215,6 @@ body::before {
     font-weight: 300;
 }
 
-.hero-stats {
-    display: flex;
-    gap: 3rem;
-    margin-bottom: 3rem;
-}
-
-.stat {
-    text-align: left;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 
-        0 4px 6px rgba(0, 0, 0, 0.02),
-        0 1px 3px rgba(0, 0, 0, 0.04),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.stat::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
-}
-
-.stat:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-        0 8px 25px rgba(0, 0, 0, 0.04),
-        0 4px 12px rgba(0, 0, 0, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
-}
-
-.stat-number {
-    display: block;
-    font-size: 2.2rem;
-    font-weight: 200;
-    color: #1a1a1a;
-    margin-bottom: 0.2rem;
-}
-
-.stat-label {
-    font-size: 0.9rem;
-    color: #64748b;
-    font-weight: 400;
-}
-
 .hero-buttons {
     display: flex;
     gap: 1.5rem;
@@ -762,12 +707,6 @@ section {
         font-size: 2.5rem;
     }
     
-    .hero-stats {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-    }
-
     .floating-element {
         display: none;
     }
