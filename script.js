@@ -107,57 +107,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function loadPublications() {
     const container = document.getElementById('publications-container');
-    
+
     publications.forEach(pub => {
-        const pubCard = createPublicationCard(pub);
-        container.appendChild(pubCard);
+        container.appendChild(createPublicationItem(pub));
     });
 }
 
-function createPublicationCard(publication) {
-    const card = document.createElement('div');
-    card.className = 'publication-card';
-    
-    const linksHtml = publication.links.map(link => 
-        `<a href="${link.url}" class="publication-link" target="_blank">${link.text}</a>`
+// Emphasize David's own name within an author list
+function emphasizeAuthor(authors) {
+    return authors.replace(/(D\. Guzman Piedrahita)/g, '<em>$1</em>');
+}
+
+function createPublicationItem(publication) {
+    const li = document.createElement('li');
+
+    const linksHtml = publication.links.map(link =>
+        `<a href="${link.url}" target="_blank" rel="noopener">${link.text}</a>`
     ).join('');
-    
-    card.innerHTML = `
-        <div class="publication-venue">${publication.venue}</div>
-        <h3 class="publication-title">${publication.title}</h3>
-        <div class="publication-authors">${publication.authors}</div>
-        <div class="publication-abstract">${publication.abstract}</div>
-        <div class="publication-links">${linksHtml}</div>
+
+    li.innerHTML = `
+        <div class="bib-abbr"><abbr>${publication.venue}</abbr></div>
+        <div class="bib-body">
+            <div class="bib-title">${publication.title}</div>
+            <div class="bib-author">${emphasizeAuthor(publication.authors)}</div>
+            <div class="bib-abstract">${publication.abstract}</div>
+            <div class="bib-links">${linksHtml}</div>
+        </div>
     `;
-    
-    return card;
+
+    return li;
 }
-
-// Animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Apply animation to cards when they come into view
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(() => {
-        const cards = document.querySelectorAll('.publication-card, .timeline-item');
-        cards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-    }, 1000);
-});
 

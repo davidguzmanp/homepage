@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Guzman Piedrahita - AI Safety Researcher</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>David Guzman Piedrahita</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
@@ -12,198 +12,115 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <h2>David Guzman Piedrahita</h2>
-            </div>
+            <a href="#top" class="nav-brand">David Guzman Piedrahita</a>
             <div class="nav-menu">
-                <a href="#publications" class="nav-link">Publications</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#about" class="nav-link">about</a>
+                <a href="#publications" class="nav-link">publications</a>
+                <a href="#experience" class="nav-link">experience</a>
+                <a href="#contact" class="nav-link">contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <!-- Floating elements -->
-        <div class="floating-element element-1"></div>
-        <div class="floating-element element-2"></div>
-        
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <strong>AI</strong> <strong>Researcher</strong> &<br>
-                        ML Engineer
-                    </h1>
-                    <p class="hero-description">
-                        I'm a highly driven ML researcher and engineer with expertise in <strong>AI safety</strong>,
-                        <strong>LLM evaluation</strong>, and <strong>multi-agent systems</strong>. My research focuses on
-                        understanding and improving the behavior of large language models in complex scenarios.
-                    </p>
-                    <div class="hero-interests">
-                        <h3>Research Interests</h3>
-                        <div class="interest-tags">
-                            <span class="tag">AI Safety & Evaluation</span>
-                            <span class="tag">Large Language Models</span>
-                            <span class="tag">Multi-Agent Systems</span>
-                            <span class="tag">Natural Language Processing</span>
-                            <span class="tag">Adversarial Robustness</span>
-                            <span class="tag">Machine Learning Systems</span>
-                        </div>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="#publications" class="btn btn-primary">View Publications</a>
-                        <a href="mailto:davidguzman1120@gmail.com" class="btn btn-secondary">
-                            <i class="fas fa-envelope"></i> Contact Me
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="profile-card">
-                        <div class="profile-avatar">
-                            <img src="IMG_1956.jpeg" alt="David Guzman Piedrahita" class="profile-image">
-                        </div>
-                        <div class="profile-info">
-                            <h3>Currently at</h3>
-                            <p><strong>University of Zürich</strong><br>MSc Computer Science</p>
-                            <p><strong>ETH Zurich & Max Planck Institute</strong><br>Research Assistant</p>
-                        </div>
-                    </div>
+    <main class="container" id="top">
+
+        <!-- About / Header -->
+        <section id="about" class="about">
+            <h1 class="page-title">David Guzman Piedrahita</h1>
+            <p class="subtitle">AI Researcher &amp; ML Engineer</p>
+
+            <div class="profile">
+                <img src="IMG_1956.jpeg" alt="David Guzman Piedrahita" class="profile-img">
+                <div class="address">
+                    <p><strong>University of Zürich</strong></p>
+                    <p>MSc Computer Science</p>
+                    <p>&nbsp;</p>
+                    <p><strong>ETH Zurich &amp; Max Planck Institute</strong></p>
+                    <p>Research Assistant</p>
                 </div>
             </div>
-        </div>
-    <a href="#publications" class="scroll-indicator" aria-label="Scroll to Publications">
-        <span class="scroll-dot"></span>
-    </a>
-    </section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="publications">
-        <div class="container">
-            <h2 class="section-title">Publications & Research</h2>
-            <div class="publications-grid" id="publications-container">
-                <!-- Publications will be loaded here by JavaScript -->
+            <div class="bio">
+                <p>
+                    I'm a highly driven ML researcher and engineer with expertise in
+                    <span class="hl">AI safety</span>, <span class="hl">LLM evaluation</span>, and
+                    <span class="hl">multi-agent systems</span>. My research focuses on understanding
+                    and improving the behavior of large language models in complex scenarios.
+                </p>
+                <p>
+                    My interests span <span class="hl">AI safety &amp; evaluation</span>,
+                    <span class="hl">large language models</span>, <span class="hl">multi-agent systems</span>,
+                    <span class="hl">natural language processing</span>, <span class="hl">adversarial robustness</span>,
+                    and <span class="hl">machine learning systems</span>. I'm currently open to opportunities in
+                    AI safety research, LLM evaluation, and multi-agent systems.
+                </p>
+                <p class="contact-inline">
+                    <a href="mailto:davidguzman1120@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://github.com/davidguzmanp" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://linkedin.com/in/davidguzman1120" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <!-- <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Medical AI Research Intern</h3>
-                            <span class="company">YUUNIQ Health</span>
-                            <span class="period">June 2025 - Present</span>
-                        </div>
-                        <ul class="achievements">
-                            <li>Optimized <strong>retrieval-augmented generation pipelines</strong> for structured and unstructured health data</li>
-                            <li>Experimented with <strong>GenAI techniques, vector search methods, and embeddings</strong> to improve system performance</li>
-                            <li>Managed and queried <strong>MongoDB databases</strong> for large-scale health data handling</li>
-                        </ul>
-                    </div>
-                </div> -->
+        <!-- Publications -->
+        <section id="publications" class="publications">
+            <h1>Publications</h1>
+            <ol class="bibliography" id="publications-container">
+                <!-- Publications loaded by JavaScript -->
+            </ol>
+        </section>
 
-                <!-- <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>NLP Engineer</h3>
-                            <span class="company">Frojigo AI Startup</span>
-                            <span class="period">Oct 2024 - Feb 2025</span>
-                        </div>
-                        <ul class="achievements">
-                            <li>Engineered natural language processing models for <strong>automated report generation</strong></li>
-                            <li>Implemented <strong>evaluation methods</strong> and <strong>monitoring infrastructure</strong> for LLM systems</li>
-                            <li>Worked with teams on cybersecurity, sustainability reporting, and marketing integration</li>
-                        </ul>
-                    </div>
-                </div> -->
+        <!-- Experience -->
+        <section id="experience" class="experience">
+            <h2 class="year">Experience</h2>
+            <ul class="post-list">
+                <li>
+                    <h3>Research Assistant <span class="org">ETH Zurich &amp; Max Planck Institute for Intelligent Systems</span></h3>
+                    <p class="post-meta">Sep 2025 &ndash; Present</p>
+                    <ul class="achievements">
+                        <li>Developing <span class="hl">multi-agent LLM systems</span> to study the emergence and evolution of <span class="hl">sanctioning norms</span> in cooperative social dilemmas</li>
+                        <li>Building a <span class="hl">multi-environment benchmark</span> incorporating game-theoretic scenarios to systematically analyze how <span class="hl">punishment and reward mechanisms</span> influence cooperative behavior</li>
+                        <li>Funding proposal writer &amp; co-designer; project funded by the <span class="hl">AI Safety Fund</span> ($499,838, 2025&ndash;2026)</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Research Assistant <span class="org">University of Zürich</span></h3>
+                    <p class="post-meta">Mar 2024 &ndash; Aug 2024</p>
+                    <ul class="achievements">
+                        <li><span class="hl">Fine-tuned large scale LLMs</span> on Cerebras chips</li>
+                        <li><span class="hl">Improved domain-specific performance by 68%</span> for Switzerland-specific knowledge</li>
+                        <li>Developed LLM chatbot with highly specific local knowledge</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Research Assistant <span class="org">ETH Zurich</span></h3>
+                    <p class="post-meta">Sep 2023 &ndash; Feb 2024</p>
+                    <ul class="achievements">
+                        <li>Conducted large-scale web scraping initiatives, storing millions of PDFs in <span class="hl">PostgreSQL</span> databases</li>
+                        <li><span class="hl">Reduced HTML extraction time by 43%</span> by prioritizing direct extraction from URLs over browser simulation</li>
+                        <li>Coordinated with cross-functional teams to maintain <span class="hl">clean coding practices</span>, thorough <span class="hl">documentation</span>, and version control via Git</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Research Assistant</h3>
-                            <span class="company">ETH Zurich & Max Planck Institute for Intelligent Systems</span>
-                            <span class="period">Sep 2025 - Present</span>
-                        </div>
-                        <ul class="achievements">
-                            <li>Developing <strong>multi-agent LLM systems</strong> to study the emergence and evolution of <strong>sanctioning norms</strong> in cooperative social dilemmas</li>
-                            <li>Building a <strong>multi-environment benchmark</strong> incorporating game-theoretic scenarios to systematically analyze how <strong>punishment and reward mechanisms</strong> influence cooperative behavior</li>
-                            <li>Funding proposal writer & co-designer; project funded by the <strong>AI Safety Fund</strong> ($499,838, 2025–2026)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Research Assistant</h3>
-                            <span class="company">University of Zürich</span>
-                            <span class="period">Mar 2024 - Aug 2024</span>
-                        </div>
-                        <ul class="achievements">
-                            <li><strong>Fine-tuned large scale LLMs</strong> on Cerebras chips</li>
-                            <li><strong>Improved domain-specific performance by 68%</strong> for Switzerland-specific knowledge</li>
-                            <li>Developed LLM chatbot with highly specific local knowledge</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Research Assistant</h3>
-                            <span class="company">ETH Zurich</span>
-                            <span class="period">Sep 2023 - Feb 2024</span>
-                        </div>
-                        <ul class="achievements">
-                            <li>Conducted large-scale web scraping initiatives, storing millions of PDFs in <strong>PostgreSQL</strong> databases</li>
-                            <li><strong>Reduced HTML extraction time by 43%</strong> by prioritizing direct extraction from URLs over browser simulation</li>
-                            <li>Coordinated with cross-functional teams to maintain <strong>clean coding practices</strong>, thorough <strong>documentation</strong>, and version control via Git</li>
-                        </ul>
-                    </div>
-                </div>
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <h2 class="year">Contact</h2>
+            <p>Open to opportunities in AI safety research, LLM evaluation, and multi-agent systems.</p>
+            <div class="social">
+                <a href="mailto:davidguzman1120@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/davidguzmanp" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/davidguzman1120" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p>Open to opportunities in AI safety research, LLM evaluation, and multi-agent systems!</p>
-                <div class="contact-links">
-                    <a href="mailto:davidguzman1120@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>davidguzman1120@gmail.com</span>
-                    </a>
-                    <a href="https://linkedin.com/in/davidguzman1120" class="contact-link" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/davidguzmanp" class="contact-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 David Guzman Piedrahita. All rights reserved.</p>
+            <p>&copy; 2025 David Guzman Piedrahita. Built with a single column and good intentions.</p>
         </div>
     </footer>
 
