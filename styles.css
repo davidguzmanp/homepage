@@ -218,6 +218,14 @@ ol.bibliography li {
     border-bottom: 1px solid var(--accent);
 }
 
+.bib-award {
+    font-size: 0.82rem;
+    color: var(--highlight-text);
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+}
+.bib-award i { margin-right: 0.25rem; }
+
 .bib-abstract {
     font-size: 0.875rem;
     color: var(--text);
@@ -240,8 +248,40 @@ ol.bibliography li {
     text-decoration: none;
 }
 
-/* ----------------------------- Experience ----------------------------- */
-.experience, .contact { margin-top: 3rem; }
+/* ----------------------------- Resume sections ----------------------------- */
+.resume-section, .contact { margin-top: 1rem; }
+
+.languages {
+    font-size: 0.95rem;
+    line-height: 2;
+}
+
+/* Compact one-line CV entries (experience, awards, service) */
+.cv-list { list-style: none; padding: 0; margin: 0; }
+
+.cv-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--divider);
+    font-size: 0.95rem;
+}
+
+.cv-list .cv-role strong { font-weight: 500; }
+
+.cv-list .cv-note {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.cv-list .cv-date {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
 
 h2.year {
     color: var(--text-light);
@@ -331,4 +371,5 @@ h2.year {
     ol.bibliography li { flex-direction: column; gap: 0.4rem; }
     .bib-abbr { flex-basis: auto; }
     h2.year { text-align: left; }
+    .cv-list li { flex-direction: column; gap: 0.15rem; }
 }
