@@ -45,7 +45,6 @@ const publications = [
     {
         title: "When Ethics and Payoffs Diverge: LLM Agents in Morally Charged Social Dilemmas",
         venue: "Preprint",
-        award: "Under submission",
         authors: "S. Backmann, D. Guzman Piedrahita, E. Tewolde, R. Mihalcea, B. Schölkopf, Z. Jin",
         abstract: "Introduced MoralSim (Moral Behavior in Social Dilemma Simulation) to evaluate how LLMs behave in the prisoner's dilemma and public goods game under morally charged contexts. Showed substantial variation across models in both their general tendency to act morally and the consistency of their behavior across game types.",
         links: [
@@ -56,7 +55,6 @@ const publications = [
     {
         title: "Robustness of Misinformation Classification Systems to Adversarial Examples Through BeamAttack",
         venue: "Preprint",
-        award: "Under submission",
         authors: "A. Fazla, L. Krauter, D. Guzman Piedrahita, A. Michail",
         abstract: "Introduced BeamAttack, a novel algorithm for generating adversarial examples in NLP via beam search. Used a masked language model to predict contextually plausible word replacements, improving the coherence of the generated adversarial examples.",
         links: [
