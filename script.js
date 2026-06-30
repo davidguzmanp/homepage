@@ -109,6 +109,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function loadPublications() {
     const container = document.getElementById('publications-container');
+    if (!container) return;
+
+    // Publications are rendered statically in index.html for SEO/crawlers.
+    // Only inject from JS if the static markup is missing (progressive enhancement).
+    if (container.querySelector('li')) return;
 
     publications.forEach(pub => {
         container.appendChild(createPublicationItem(pub));
